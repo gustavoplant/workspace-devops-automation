@@ -11,8 +11,6 @@ COPY .mvn .mvn
 COPY mvnw .
 COPY mvnw.cmd .
 
-RUN apt-get update && apt-get install dos2unix
-
 # Baixa as dependências (esta camada será cacheada)
 RUN chmod +x mvnw && ./mvnw dependency:go-offline -B
 
